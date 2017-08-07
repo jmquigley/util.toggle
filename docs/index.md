@@ -11,6 +11,11 @@ it is added.</p>
 <dd><p>Takes a given set of strings and adds/removes them from the set if a given
 condition (predicate) is met.</p>
 </dd>
+<dt><a href="#toggleIfElse">toggleIfElse(obj, predicate, ifKeys, elseKeys)</a> ⇒ <code>Set</code></dt>
+<dd><p>Takes a given set of strings and adds/removes them from the set if a given
+condition (predicate) is met.  If it is not met, then a secondary (else) set
+of strings are added/removed.</p>
+</dd>
 <dt><a href="#toggleOff">toggleOff(obj, keys)</a> ⇒ <code>Set</code></dt>
 <dd><p>Takes a given set of strings and removes them from the input set.</p>
 </dd>
@@ -18,12 +23,22 @@ condition (predicate) is met.</p>
 <dd><p>Takes a given set of strings and removes them from the input set if a given
 condition (predicate) is met.  If not met, then they are turned on.</p>
 </dd>
+<dt><a href="#toggleOffIfElse">toggleOffIfElse(obj, predicate, ifKeys, elseKeys)</a> ⇒ <code>Set</code></dt>
+<dd><p>Takes a given set of strings and removes them from the input set if a given
+condition (predicate) is met.  If not met, then different set of strings are
+turned off.</p>
+</dd>
 <dt><a href="#toggleOn">toggleOn(obj, keys)</a> ⇒ <code>Set</code></dt>
 <dd><p>Takes a given set of strings and adds them to the input set.</p>
 </dd>
 <dt><a href="#toggleOnIf">toggleOnIf(obj, predicate, keys)</a> ⇒ <code>Set</code></dt>
 <dd><p>Takes a given set of strings and adds them to the input set if a given
 condition (predicate) is met.  If not met, they they are turned off.</p>
+</dd>
+<dt><a href="#toggleOnIfElse">toggleOnIfElse(obj, predicate, ifKeys, elseKeys)</a> ⇒ <code>Set</code></dt>
+<dd><p>Takes a given set of strings and adds them from the input set if a given
+condition (predicate) is met.  If not met, then different set of strings are
+turned on.</p>
 </dd>
 </dl>
 
@@ -59,6 +74,23 @@ condition (predicate) is met.
 | predicate | <code>boolean</code> | a boolean condition when true means that the toggle operation will be performed. |
 | keys | <code>string</code> | N number of strings to use for the toggle |
 
+<a name="toggleIfElse"></a>
+
+## toggleIfElse(obj, predicate, ifKeys, elseKeys) ⇒ <code>Set</code>
+Takes a given set of strings and adds/removes them from the set if a given
+condition (predicate) is met.  If it is not met, then a secondary (else) set
+of strings are added/removed.
+
+**Kind**: global function  
+**Returns**: <code>Set</code> - the updated set of toggled strings.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj | <code>Set</code> | a set of strings used for the toggle operation |
+| predicate | <code>boolean</code> | a boolean condition when true means that the toggle operation will be performed. |
+| ifKeys | <code>string</code> | N number of strings to use for the if toggle |
+| elseKeys | <code>string</code> | N number of strings to use for the else toggle |
+
 <a name="toggleOff"></a>
 
 ## toggleOff(obj, keys) ⇒ <code>Set</code>
@@ -87,6 +119,23 @@ condition (predicate) is met.  If not met, then they are turned on.
 | predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned off in the set |
 | keys | <code>string</code> | N number of strings to use for the toggle |
 
+<a name="toggleOffIfElse"></a>
+
+## toggleOffIfElse(obj, predicate, ifKeys, elseKeys) ⇒ <code>Set</code>
+Takes a given set of strings and removes them from the input set if a given
+condition (predicate) is met.  If not met, then different set of strings are
+turned off.
+
+**Kind**: global function  
+**Returns**: <code>Set</code> - the updated set of toggled strings.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj | <code>Set</code> | a set of strings used for the toggle operation |
+| predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned off in the set |
+| ifKeys | <code>string</code> | N number of strings to use for the if toggle |
+| elseKeys | <code>string</code> | N number of strings to use for the else toggle |
+
 <a name="toggleOn"></a>
 
 ## toggleOn(obj, keys) ⇒ <code>Set</code>
@@ -114,4 +163,21 @@ condition (predicate) is met.  If not met, they they are turned off.
 | obj | <code>Set</code> | a set of strings used for the toggle operation |
 | predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned on in the set |
 | keys | <code>string</code> | N number of strings to use for the toggle |
+
+<a name="toggleOnIfElse"></a>
+
+## toggleOnIfElse(obj, predicate, ifKeys, elseKeys) ⇒ <code>Set</code>
+Takes a given set of strings and adds them from the input set if a given
+condition (predicate) is met.  If not met, then different set of strings are
+turned on.
+
+**Kind**: global function  
+**Returns**: <code>Set</code> - the updated set of toggled strings.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj | <code>Set</code> | a set of strings used for the toggle operation |
+| predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned off in the set |
+| ifKeys | <code>string</code> | N number of strings to use for the if toggle |
+| elseKeys | <code>string</code> | N number of strings to use for the else toggle |
 

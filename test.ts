@@ -4,10 +4,13 @@ import test from 'ava';
 import {
 	toggle,
 	toggleIf,
+	toggleIfElse,
 	toggleOff,
 	toggleOffIf,
+	toggleOffIfElse,
 	toggleOn,
-	toggleOnIf
+	toggleOnIf,
+	toggleOnIfElse
 } from './index';
 
 test('Test toggling a keys on/off', t => {
@@ -144,4 +147,97 @@ test('Test toggling keys on when using predicate', t => {
 
 	t.true(x.has('abc'));
 	t.true(x.has('def'));
+});
+
+test('Test toggling keys with if/else predicate', t => {
+	const x: Set<string> = new Set<string>();
+	t.truthy(x);
+
+	x.add('abc');
+	x.add('def');
+
+	toggleIfElse(x, false)(
+		'abc'
+	)(
+		'def'
+	);
+
+	t.true(x.has('abc'));
+	t.false(x.has('def'));
+
+	x.add('def');
+
+	toggleIfElse(x, true)(
+		'abc'
+	)(
+		'def'
+	);
+
+	t.false(x.has('abc'));
+	t.true(x.has('def'));
+});
+
+test('Test toggling keys off with if/else predicate', t => {
+	const x: Set<string> = new Set<string>();
+	t.truthy(x);
+
+	x.add('abc');
+	x.add('def');
+	x.add('ghi');
+
+	toggleOffIfElse(x, false)(
+		'abc'
+	)(
+		'def'
+	);
+
+	t.true(x.has('abc'));
+	t.false(x.has('def'));
+	t.true(x.has('ghi'));
+
+	x.add('def');
+	t.true(x.has('def'));
+
+	toggleOffIfElse(x, true)(
+		'abc'
+	)(
+		'def'
+	);
+
+	t.false(x.has('abc'));
+	t.true(x.has('def'));
+	t.true(x.has('ghi'));
+});
+
+test('Test toggle keys on with if/else predicate', t => {
+	const x: Set<string> = new Set<string>();
+	t.truthy(x);
+
+	x.add('abc');
+	x.add('def');
+
+	toggleOnIfElse(x, false)(
+		'abc'
+	)(
+		'ghi'
+	);
+
+	t.true(x.has('abc'));
+	t.true(x.has('def'));
+	t.true(x.has('ghi'));
+
+	x.add('ghi');
+	x.delete('abc');
+	t.true(x.has('ghi'));
+	t.false(x.has('abc'));
+
+	toggleOnIfElse(x, true)(
+		'abc'
+	)(
+		'ghi'
+	);
+
+	t.true(x.has('abc'));
+	t.true(x.has('def'));
+	t.true(x.has('ghi'));
 });

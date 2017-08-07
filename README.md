@@ -88,11 +88,46 @@ toggle(x, true)(
 // x => {'def'}
 ```
 
+#### Toggle string on based on if/else predicate
+
+```javascript
+import {toggleOnIfElse} from 'util.toggle';
+
+const x: Set<string> = new Set<string>();
+
+x.add('abc');
+
+// x => {'abc'}
+
+toggleOnIfElse(x, false)(
+	'abc'
+)(
+	'def'
+);
+
+// x => {'abc', 'def'}
+
+x.delete('abc');
+
+// x => {'def'}
+
+toggleOnIfElse(x, true)(
+	'abc'
+)(
+	'ghi'
+);
+
+// x => {'abc', 'def'}
+```
+
 ## API
 
 - [toggle()](docs/index.md#toggle)
-- [toggleOn()](docs/index.md#toggleOn)
-- [toggleOff()](docs/index.md#toggleOff)
 - [toggleIf()](docs/index.md#toggleIf)
-- [toggleOnIf()](docs/index.md#toggleOnIf)
+- [toggleIfElse()](docs/index.md#toggleIfElse)
+- [toggleOff()](docs/index.md#toggleOff)
 - [toggleOffIf()](docs/index.md#toggleOffIf)
+- [toggleOffIfElse()](docs/index.md#toggleOffIfElse)
+- [toggleOn()](docs/index.md#toggleOn)
+- [toggleOnIf()](docs/index.md#toggleOnIf)
+- [toggleOnIfElse()](docs/index.md#toggleOnIfElse)
