@@ -102,11 +102,8 @@ test('Test toggling keys off when using predicate', t => {
 	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
-	x.add('abc');
-	x.add('def');
-
-	t.true(x.has('abc'));
-	t.true(x.has('def'));
+	t.false(x.has('abc'));
+	t.false(x.has('def'));
 
 	toggleOffIf(x, false)(
 		'abc',
@@ -129,8 +126,8 @@ test('Test toggling keys on when using predicate', t => {
 	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
-	t.false(x.has('abc'));
-	t.false(x.has('def'));
+	x.add('abc');
+	x.add('def');
 
 	toggleOnIf(x, false)(
 		'abc',

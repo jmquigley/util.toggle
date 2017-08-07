@@ -63,7 +63,7 @@ export function toggleOff(obj: Set<string>) {
 
 /**
  * Takes a given set of strings and removes them from the input set if a given
- * condition (predicate) is met.
+ * condition (predicate) is met.  If not met, then they are turned on.
  * @param obj {Set} a set of strings used for the toggle operation
  * @param predicate {boolean} a boolean condition when true means that the
  * items will be turned off in the set
@@ -74,6 +74,8 @@ export function toggleOffIf(obj: Set<string>, predicate: boolean) {
 	return (...keys: string[]): Set<string> => {
 		if (predicate) {
 			toggleOff(obj)(...keys);
+		} else {
+			toggleOn(obj)(...keys);
 		}
 
 		return obj;
@@ -99,7 +101,7 @@ export function toggleOn(obj: Set<string>) {
 
 /**
  * Takes a given set of strings and adds them to the input set if a given
- * condition (predicate) is met.
+ * condition (predicate) is met.  If not met, they they are turned off.
  * @param obj {Set} a set of strings used for the toggle operation
  * @param predicate {boolean} a boolean condition when true means that the
  * items will be turned on in the set
@@ -110,6 +112,8 @@ export function toggleOnIf(obj: Set<string>, predicate: boolean) {
 	return (...keys: string[]): Set<string> => {
 		if (predicate) {
 			toggleOn(obj)(...keys);
+		} else {
+			toggleOff(obj)(...keys);
 		}
 
 		return obj;

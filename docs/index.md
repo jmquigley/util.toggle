@@ -16,14 +16,14 @@ condition (predicate) is met.</p>
 </dd>
 <dt><a href="#toggleOffIf">toggleOffIf(obj, predicate, keys)</a> ⇒ <code>Set</code></dt>
 <dd><p>Takes a given set of strings and removes them from the input set if a given
-condition (predicate) is met.</p>
+condition (predicate) is met.  If not met, then they are turned on.</p>
 </dd>
 <dt><a href="#toggleOn">toggleOn(obj, keys)</a> ⇒ <code>Set</code></dt>
 <dd><p>Takes a given set of strings and adds them to the input set.</p>
 </dd>
 <dt><a href="#toggleOnIf">toggleOnIf(obj, predicate, keys)</a> ⇒ <code>Set</code></dt>
 <dd><p>Takes a given set of strings and adds them to the input set if a given
-condition (predicate) is met.</p>
+condition (predicate) is met.  If not met, they they are turned off.</p>
 </dd>
 </dl>
 
@@ -76,7 +76,7 @@ Takes a given set of strings and removes them from the input set.
 
 ## toggleOffIf(obj, predicate, keys) ⇒ <code>Set</code>
 Takes a given set of strings and removes them from the input set if a given
-condition (predicate) is met.
+condition (predicate) is met.  If not met, then they are turned on.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
@@ -104,7 +104,7 @@ Takes a given set of strings and adds them to the input set.
 
 ## toggleOnIf(obj, predicate, keys) ⇒ <code>Set</code>
 Takes a given set of strings and adds them to the input set if a given
-condition (predicate) is met.
+condition (predicate) is met.  If not met, they they are turned off.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
