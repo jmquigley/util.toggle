@@ -1,7 +1,5 @@
 'use strict';
 
-import {Set} from 'immutable';
-
 /**
  * Takes a given set of strings and adds/removes them from that set.  If the
  * string value is in the set it is removed.  If it is not in the set then
@@ -17,9 +15,9 @@ export function toggle(obj: Set<string>) {
 	return (...keys: string[]): Set<string> => {
 		for (const key of keys) {
 			if (obj.has(key)) {
-				obj = obj.delete(key);
+				obj.delete(key);
 			} else {
-				obj = obj.add(key);
+				obj.add(key);
 			}
 		}
 
@@ -39,7 +37,7 @@ export function toggle(obj: Set<string>) {
 export function toggleIf(obj: Set<string>, predicate: boolean) {
 	return (...keys: string[]): Set<string> => {
 		if (predicate) {
-			obj = toggle(obj)(...keys);
+			toggle(obj)(...keys);
 		}
 
 		return obj;
@@ -56,7 +54,7 @@ export function toggleIf(obj: Set<string>, predicate: boolean) {
 export function toggleOff(obj: Set<string>) {
 	return (...keys: string[]): Set<string> => {
 		for (const key of keys) {
-			obj = obj.delete(key);
+			obj.delete(key);
 		}
 
 		return obj;
@@ -75,7 +73,7 @@ export function toggleOff(obj: Set<string>) {
 export function toggleOffIf(obj: Set<string>, predicate: boolean) {
 	return (...keys: string[]): Set<string> => {
 		if (predicate) {
-			obj = toggleOff(obj)(...keys);
+			toggleOff(obj)(...keys);
 		}
 
 		return obj;
@@ -92,7 +90,7 @@ export function toggleOffIf(obj: Set<string>, predicate: boolean) {
 export function toggleOn(obj: Set<string>) {
 	return (...keys: string[]): Set<string> => {
 		for (const key of keys) {
-			obj = obj.add(key);
+			obj.add(key);
 		}
 
 		return obj;
@@ -111,7 +109,7 @@ export function toggleOn(obj: Set<string>) {
 export function toggleOnIf(obj: Set<string>, predicate: boolean) {
 	return (...keys: string[]): Set<string> => {
 		if (predicate) {
-			obj = toggleOn(obj)(...keys);
+			toggleOn(obj)(...keys);
 		}
 
 		return obj;

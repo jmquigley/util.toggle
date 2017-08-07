@@ -34,29 +34,28 @@ A set of functions used to toggle strings on/off within a `Set` of strings.  The
 #### Toggle string on/off
 
 ```javascript
-import {Set} from 'immutable';
 import {toggle} from 'util.toggle';
 
-let x: Set<string> = Set<string>();
+const x: Set<string> = new Set<string>();
 
-x = x.add('abc');
-x = x.add('def');
+x.add('abc');
+x.add('def');
 
 // x => {'abc', 'def'}
 
-x = toggle(x)(
+toggle(x)(
 	'abc'
 );
 
 // x => {'def'}
 
-x = toggle(x)(
+toggle(x)(
 	'abc'
 );
 
 // x => {'abc', 'def'}
 
-x = toggle(x)(
+toggle(x)(
 	'abc',
 	'def'
 );
@@ -67,23 +66,22 @@ x = toggle(x)(
 #### Toggle string based on predicate
 
 ```javascript
-import {Set} from 'immutable';
 import {toggleIf} from 'util.toggle';
 
-let x: Set<string> = Set<string>();
+const x: Set<string> = new Set<string>();
 
-x = x.add('abc');
-x = x.add('def');
+x.add('abc');
+x.add('def');
 
 // x => {'abc', 'def'}
 
-x = toggleIf(x, false)(
+toggleIf(x, false)(
 	'abc'
 );
 
 // x => {'abc', 'def'}
 
-x = toggle(x, true)(
+toggle(x, true)(
 	'abc'
 );
 

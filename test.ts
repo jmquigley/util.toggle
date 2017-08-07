@@ -1,7 +1,6 @@
 'use strict';
 
 import test from 'ava';
-import {Set} from 'immutable';
 import {
 	toggle,
 	toggleIf,
@@ -12,27 +11,27 @@ import {
 } from './index';
 
 test('Test toggling a keys on/off', t => {
-	let x: Set<string> = Set<string>();
+	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
-	x = x.add('abc');
-	x = x.add('def');
+	x.add('abc');
+	x.add('def');
 
-	x = toggle(x)(
+	toggle(x)(
 		'abc'
 	);
 
 	t.false(x.has('abc'));
 	t.true(x.has('def'));
 
-	x = toggle(x)(
+	toggle(x)(
 		'abc'
 	);
 
 	t.true(x.has('abc'));
 	t.true(x.has('def'));
 
-	x = toggle(x)(
+	toggle(x)(
 		'def'
 	);
 
@@ -41,13 +40,13 @@ test('Test toggling a keys on/off', t => {
 });
 
 test('Test toggling keys if a condition is met', t => {
-	let x: Set<string> = Set<string>();
+	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
-	x = x.add('abc');
-	x = x.add('def');
+	x.add('abc');
+	x.add('def');
 
-	x = toggleIf(x, false)(
+	toggleIf(x, false)(
 		'abc',
 		'def'
 	);
@@ -55,7 +54,7 @@ test('Test toggling keys if a condition is met', t => {
 	t.true(x.has('abc'));
 	t.true(x.has('def'));
 
-	x = toggleIf(x, true)(
+	toggleIf(x, true)(
 		'abc',
 		'def'
 	);
@@ -65,13 +64,13 @@ test('Test toggling keys if a condition is met', t => {
 });
 
 test('Test toggling keys on', t => {
-	let x: Set<string> = Set<string>();
+	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
 	t.false(x.has('abc'));
 	t.false(x.has('def'));
 
-	x = toggleOn(x)(
+	toggleOn(x)(
 		'abc',
 		'def'
 	);
@@ -81,16 +80,16 @@ test('Test toggling keys on', t => {
 });
 
 test('Test toggling keys off', t => {
-	let x: Set<string> = Set<string>();
+	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
-	x = x.add('abc');
-	x = x.add('def');
+	x.add('abc');
+	x.add('def');
 
 	t.true(x.has('abc'));
 	t.true(x.has('def'));
 
-	x = toggleOff(x)(
+	toggleOff(x)(
 		'abc',
 		'def'
 	);
@@ -100,16 +99,16 @@ test('Test toggling keys off', t => {
 });
 
 test('Test toggling keys off when using predicate', t => {
-	let x: Set<string> = Set<string>();
+	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
-	x = x.add('abc');
-	x = x.add('def');
+	x.add('abc');
+	x.add('def');
 
 	t.true(x.has('abc'));
 	t.true(x.has('def'));
 
-	x = toggleOffIf(x, false)(
+	toggleOffIf(x, false)(
 		'abc',
 		'def'
 	);
@@ -117,7 +116,7 @@ test('Test toggling keys off when using predicate', t => {
 	t.true(x.has('abc'));
 	t.true(x.has('def'));
 
-	x = toggleOffIf(x, true)(
+	toggleOffIf(x, true)(
 		'abc',
 		'def'
 	);
@@ -127,13 +126,13 @@ test('Test toggling keys off when using predicate', t => {
 });
 
 test('Test toggling keys on when using predicate', t => {
-	let x: Set<string> = Set<string>();
+	const x: Set<string> = new Set<string>();
 	t.truthy(x);
 
 	t.false(x.has('abc'));
 	t.false(x.has('def'));
 
-	x = toggleOnIf(x, false)(
+	toggleOnIf(x, false)(
 		'abc',
 		'def'
 	);
@@ -141,7 +140,7 @@ test('Test toggling keys on when using predicate', t => {
 	t.false(x.has('abc'));
 	t.false(x.has('def'));
 
-	x = toggleOnIf(x, true)(
+	toggleOnIf(x, true)(
 		'abc',
 		'def'
 	);
