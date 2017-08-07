@@ -222,13 +222,11 @@ test('Test toggle keys on with if/else predicate', t => {
 		'ghi'
 	);
 
-	t.true(x.has('abc'));
+	t.false(x.has('abc'));
 	t.true(x.has('def'));
 	t.true(x.has('ghi'));
 
-	x.add('ghi');
 	x.delete('abc');
-	t.true(x.has('ghi'));
 	t.false(x.has('abc'));
 
 	toggleOnIfElse(x, true)(
@@ -239,5 +237,5 @@ test('Test toggle keys on with if/else predicate', t => {
 
 	t.true(x.has('abc'));
 	t.true(x.has('def'));
-	t.true(x.has('ghi'));
+	t.false(x.has('ghi'));
 });

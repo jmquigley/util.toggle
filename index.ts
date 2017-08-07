@@ -125,8 +125,10 @@ export function toggleOffIfElse(obj: Set<string>, predicate: boolean) {
 
 			if (predicate) {
 				toggleOff(obj)(...ifKeys);
+				toggleOn(obj)(...elseKeys);
 			} else {
 				toggleOff(obj)(...elseKeys);
+				toggleOn(obj)(...ifKeys);
 			}
 
 			return obj;
@@ -189,8 +191,10 @@ export function toggleOnIfElse(obj: Set<string>, predicate: boolean) {
 
 			if (predicate) {
 				toggleOn(obj)(...ifKeys);
+				toggleOff(obj)(...elseKeys);
 			} else {
 				toggleOn(obj)(...elseKeys);
+				toggleOff(obj)(...ifKeys);
 			}
 
 			return obj;
