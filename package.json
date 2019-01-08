@@ -1,6 +1,6 @@
 {
   "name": "util.toggle",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "author": "jmquigley <jmquigley@outlook.com>",
   "description": "Functions used to toggle strings on/off within a Set",
   "main": "./index.js",
