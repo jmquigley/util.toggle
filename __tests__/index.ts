@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 import {
 	toggle,
@@ -10,231 +10,177 @@ import {
 	toggleOn,
 	toggleOnIf,
 	toggleOnIfElse
-} from '../index';
+} from "../index";
 
-test('Test toggling a keys on/off', () => {
+test("Test toggling a keys on/off", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	x.add('abc');
-	x.add('def');
+	x.add("abc");
+	x.add("def");
 
-	toggle(x)(
-		'abc'
-	);
+	toggle(x)("abc");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(true);
 
-	toggle(x)(
-		'abc'
-	);
+	toggle(x)("abc");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(true);
 
-	toggle(x)(
-		'def'
-	);
+	toggle(x)("def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(false);
 });
 
-test('Test toggling keys if a condition is met', () => {
+test("Test toggling keys if a condition is met", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	x.add('abc');
-	x.add('def');
+	x.add("abc");
+	x.add("def");
 
-	toggleIf(x, false)(
-		'abc',
-		'def'
-	);
+	toggleIf(x, false)("abc", "def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(true);
 
-	toggleIf(x, true)(
-		'abc',
-		'def'
-	);
+	toggleIf(x, true)("abc", "def");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(false);
 });
 
-test('Test toggling keys on', () => {
+test("Test toggling keys on", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(false);
 
-	toggleOn(x)(
-		'abc',
-		'def'
-	);
+	toggleOn(x)("abc", "def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(true);
 });
 
-test('Test toggling keys off', () => {
+test("Test toggling keys off", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	x.add('abc');
-	x.add('def');
+	x.add("abc");
+	x.add("def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(true);
 
-	toggleOff(x)(
-		'abc',
-		'def'
-	);
+	toggleOff(x)("abc", "def");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(false);
 });
 
-test('Test toggling keys off when using predicate', () => {
+test("Test toggling keys off when using predicate", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(false);
 
-	toggleOffIf(x, false)(
-		'abc',
-		'def'
-	);
+	toggleOffIf(x, false)("abc", "def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(true);
 
-	toggleOffIf(x, true)(
-		'abc',
-		'def'
-	);
+	toggleOffIf(x, true)("abc", "def");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(false);
 });
 
-test('Test toggling keys on when using predicate', () => {
+test("Test toggling keys on when using predicate", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	x.add('abc');
-	x.add('def');
+	x.add("abc");
+	x.add("def");
 
-	toggleOnIf(x, false)(
-		'abc',
-		'def'
-	);
+	toggleOnIf(x, false)("abc", "def");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(false);
 
-	toggleOnIf(x, true)(
-		'abc',
-		'def'
-	);
+	toggleOnIf(x, true)("abc", "def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(true);
 });
 
-test('Test toggling keys with if/else predicate', () => {
+test("Test toggling keys with if/else predicate", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	x.add('abc');
-	x.add('def');
+	x.add("abc");
+	x.add("def");
 
-	toggleIfElse(x, false)(
-		'abc'
-	)(
-		'def'
-	);
+	toggleIfElse(x, false)("abc")("def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(false);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(false);
 
-	x.add('def');
+	x.add("def");
 
-	toggleIfElse(x, true)(
-		'abc'
-	)(
-		'def'
-	);
+	toggleIfElse(x, true)("abc")("def");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(true);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(true);
 });
 
-test('Test toggling keys off with if/else predicate', () => {
+test("Test toggling keys off with if/else predicate", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	x.add('abc');
-	x.add('def');
-	x.add('ghi');
+	x.add("abc");
+	x.add("def");
+	x.add("ghi");
 
-	toggleOffIfElse(x, false)(
-		'abc'
-	)(
-		'def'
-	);
+	toggleOffIfElse(x, false)("abc")("def");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(false);
-	expect(x.has('ghi')).toBe(true);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(false);
+	expect(x.has("ghi")).toBe(true);
 
-	x.add('def');
-	expect(x.has('def')).toBe(true);
+	x.add("def");
+	expect(x.has("def")).toBe(true);
 
-	toggleOffIfElse(x, true)(
-		'abc'
-	)(
-		'def'
-	);
+	toggleOffIfElse(x, true)("abc")("def");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(true);
-	expect(x.has('ghi')).toBe(true);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(true);
+	expect(x.has("ghi")).toBe(true);
 });
 
-test('Test toggle keys on with if/else predicate', () => {
+test("Test toggle keys on with if/else predicate", () => {
 	const x: Set<string> = new Set<string>();
 	expect(x).toBeDefined();
 
-	x.add('abc');
-	x.add('def');
+	x.add("abc");
+	x.add("def");
 
-	toggleOnIfElse(x, false)(
-		'abc'
-	)(
-		'ghi'
-	);
+	toggleOnIfElse(x, false)("abc")("ghi");
 
-	expect(x.has('abc')).toBe(false);
-	expect(x.has('def')).toBe(true);
-	expect(x.has('ghi')).toBe(true);
+	expect(x.has("abc")).toBe(false);
+	expect(x.has("def")).toBe(true);
+	expect(x.has("ghi")).toBe(true);
 
-	x.delete('abc');
-	expect(x.has('abc')).toBe(false);
+	x.delete("abc");
+	expect(x.has("abc")).toBe(false);
 
-	toggleOnIfElse(x, true)(
-		'abc'
-	)(
-		'ghi'
-	);
+	toggleOnIfElse(x, true)("abc")("ghi");
 
-	expect(x.has('abc')).toBe(true);
-	expect(x.has('def')).toBe(true);
-	expect(x.has('ghi')).toBe(false);
+	expect(x.has("abc")).toBe(true);
+	expect(x.has("def")).toBe(true);
+	expect(x.has("ghi")).toBe(false);
 });

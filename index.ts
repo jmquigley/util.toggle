@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Takes a given set of strings and adds/removes them from that set.  If the
@@ -58,7 +58,6 @@ export function toggleIf(obj: Set<string>, predicate: boolean) {
 export function toggleIfElse(obj: Set<string>, predicate: boolean) {
 	return (...ifKeys: string[]) => {
 		return (...elseKeys: string[]): Set<string> => {
-
 			if (predicate) {
 				toggle(obj)(...ifKeys);
 			} else {
@@ -122,7 +121,6 @@ export function toggleOffIf(obj: Set<string>, predicate: boolean) {
 export function toggleOffIfElse(obj: Set<string>, predicate: boolean) {
 	return (...ifKeys: string[]) => {
 		return (...elseKeys: string[]): Set<string> => {
-
 			if (predicate) {
 				toggleOff(obj)(...ifKeys);
 				toggleOn(obj)(...elseKeys);
@@ -188,7 +186,6 @@ export function toggleOnIf(obj: Set<string>, predicate: boolean) {
 export function toggleOnIfElse(obj: Set<string>, predicate: boolean) {
 	return (...ifKeys: string[]) => {
 		return (...elseKeys: string[]): Set<string> => {
-
 			if (predicate) {
 				toggleOn(obj)(...ifKeys);
 				toggleOff(obj)(...elseKeys);
