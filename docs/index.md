@@ -53,11 +53,10 @@ This is a curried function because why not...
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| keys | <code>string</code> | N number of strings to use for the toggle |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- keys <code>string</code> - N number of strings to use for the toggle
 
 <a name="toggleIf"></a>
 
@@ -67,12 +66,12 @@ condition (predicate) is met.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| predicate | <code>boolean</code> | a boolean condition when true means that the toggle operation will be performed. |
-| keys | <code>string</code> | N number of strings to use for the toggle |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- predicate <code>boolean</code> - a boolean condition when true means that the
+toggle operation will be performed.
+- keys <code>string</code> - N number of strings to use for the toggle
 
 <a name="toggleIfElse"></a>
 
@@ -83,13 +82,13 @@ of strings are added/removed.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| predicate | <code>boolean</code> | a boolean condition when true means that the toggle operation will be performed. |
-| ifKeys | <code>string</code> | N number of strings to use for the if toggle |
-| elseKeys | <code>string</code> | N number of strings to use for the else toggle |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- predicate <code>boolean</code> - a boolean condition when true means that the
+toggle operation will be performed.
+- ifKeys <code>string</code> - N number of strings to use for the if toggle
+- elseKeys <code>string</code> - N number of strings to use for the else toggle
 
 <a name="toggleOff"></a>
 
@@ -98,11 +97,10 @@ Takes a given set of strings and removes them from the input set.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| keys | <code>string</code> | N number of strings that will be removed from the set |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- keys <code>string</code> - N number of strings that will be removed from the set
 
 <a name="toggleOffIf"></a>
 
@@ -112,12 +110,12 @@ condition (predicate) is met.  If not met, then they are turned on.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned off in the set |
-| keys | <code>string</code> | N number of strings to use for the toggle |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- predicate <code>boolean</code> - a boolean condition when true means that the
+items will be turned off in the set
+- keys <code>string</code> - N number of strings to use for the toggle
 
 <a name="toggleOffIfElse"></a>
 
@@ -128,13 +126,13 @@ turned off.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned off in the set |
-| ifKeys | <code>string</code> | N number of strings to use for the if toggle |
-| elseKeys | <code>string</code> | N number of strings to use for the else toggle |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- predicate <code>boolean</code> - a boolean condition when true means that the
+items will be turned off in the set
+- ifKeys <code>string</code> - N number of strings to use for the if toggle
+- elseKeys <code>string</code> - N number of strings to use for the else toggle
 
 <a name="toggleOn"></a>
 
@@ -143,11 +141,10 @@ Takes a given set of strings and adds them to the input set.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| keys | <code>string</code> | N number of strings that will be added to the set |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- keys <code>string</code> - N number of strings that will be added to the set
 
 <a name="toggleOnIf"></a>
 
@@ -157,12 +154,12 @@ condition (predicate) is met.  If not met, they they are turned off.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned on in the set |
-| keys | <code>string</code> | N number of strings to use for the toggle |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- predicate <code>boolean</code> - a boolean condition when true means that the
+items will be turned on in the set
+- keys <code>string</code> - N number of strings to use for the toggle
 
 <a name="toggleOnIfElse"></a>
 
@@ -173,11 +170,11 @@ turned on.
 
 **Kind**: global function  
 **Returns**: <code>Set</code> - the updated set of toggled strings.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set</code> | a set of strings used for the toggle operation |
-| predicate | <code>boolean</code> | a boolean condition when true means that the items will be turned off in the set |
-| ifKeys | <code>string</code> | N number of strings to use for the if toggle |
-| elseKeys | <code>string</code> | N number of strings to use for the else toggle |
+- obj <code>Set</code> - a set of strings used for the toggle operation
+- predicate <code>boolean</code> - a boolean condition when true means that the
+items will be turned off in the set
+- ifKeys <code>string</code> - N number of strings to use for the if toggle
+- elseKeys <code>string</code> - N number of strings to use for the else toggle
 
