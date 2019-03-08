@@ -2,7 +2,7 @@
 
 > Functions used to toggle strings on/off within a Set
 
-[![build](https://travis-ci.org/jmquigley/util.toggle.svg?branch=master)](https://travis-ci.org/jmquigley/util.toggle)
+[![build](https://circleci.com/gh/jmquigley/util.toggle/tree/master.svg?style=shield)](https://circleci.com/gh/jmquigley/util.toggle/tree/master)
 [![analysis](https://img.shields.io/badge/analysis-tslint-9cf.svg)](https://palantir.github.io/tslint/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![testing](https://img.shields.io/badge/testing-jest-blue.svg)](https://facebook.github.io/jest/)
