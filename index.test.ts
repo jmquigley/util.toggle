@@ -10,7 +10,7 @@ import {
 	toggleOn,
 	toggleOnIf,
 	toggleOnIfElse
-} from "../index";
+} from "./index";
 
 test("Test toggling a keys on/off", () => {
 	const x: Set<string> = new Set<string>();
