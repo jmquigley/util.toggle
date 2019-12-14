@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Takes a given set of strings and adds/removes them from that set.  If the
  * string value is in the set it is removed.  If it is not in the set then
